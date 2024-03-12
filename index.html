@@ -69,6 +69,27 @@
         // Update time every second
         setInterval(updateTime, 1000);
         updateTime();
+        
+        const today = new Date();
+        const day = today.getDay();    
+
+        let type = "a weekday.";
+        let advice = "It's time to work hard! 💪🏽";
+
+        // From function getDay() 0 = Sun, 6 = Sat... change message using if statement
+        if (day === 0 || day === 6) {
+            type = "the weekend.";
+            advice = "Time to relax and recharge! 😌😴";
+        }
+        else if (day === 1) {
+            type = "Monday.";
+            advice = "Let's do numbers! Sock it to me! 🔢💸";
+        }
+        else if (day === 5) {
+            type = "Friday... finally!";
+            advice = "Food, chill, Soju & gaming! 🍚🍶🎮";
+        }
+        document.getElementById("message-container").innerHTML = `Today is ${type} ${advice}`;
     </script>
 </body>
 </html>
